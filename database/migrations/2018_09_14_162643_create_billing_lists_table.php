@@ -16,12 +16,13 @@ class CreateBillingListsTable extends Migration
         if(!Schema::hasTable('billing_lists')){
             Schema::create('billing_lists', function (Blueprint $table) {
                 $table->increments('id');
-                $table->integer('billing_id');
+                $table->integer('billing_id')->unsigned();
                 $table->integer('item_id')->unsigned();
                 $table->integer('quantity');
                 $table->integer('price');
 
                 $table->foreign('item_id')->references('id')->on('accessories');
+                $table->foreign('billing_id')->references('id')->on('billings');
                 $table->timestamps();
             });
         }

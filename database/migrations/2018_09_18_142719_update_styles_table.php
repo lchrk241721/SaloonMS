@@ -13,7 +13,7 @@ class UpdateStylesTable extends Migration
      */
     public function up()
     {
-        Schema::table('style', function (Blueprint $table){
+        Schema::table('styles', function (Blueprint $table){
             $table->integer('home_service')->default(0);
             $table->integer('saloon_service')->default(0);
         });

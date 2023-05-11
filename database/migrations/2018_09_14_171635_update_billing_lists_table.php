@@ -15,9 +15,11 @@ class UpdateBillingListsTable extends Migration
     {
         Schema::table('billing_lists', function (Blueprint $table) {
 
+           /*
             $table->integer('billing_id')->unsigned();
 
             $table->foreign('billing_id')->references('id')->on('billings');
+            */
 
         });
     }
